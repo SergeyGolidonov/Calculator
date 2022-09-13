@@ -1,7 +1,5 @@
 package streamAPI3_2_Saving;
 
-import streamAPI3_1_Installation.GameProgress;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package streamAPI3_1_Installation;
+package streamAPI3_2_Saving;
 
 import java.io.Serial;
 import java.io.Serializable;
