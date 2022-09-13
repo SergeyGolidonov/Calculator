@@ -12,7 +12,7 @@ public class Main {
                 new File("D://Games//temp"),
                 new File("D://Games//src"),
                 new File("D://Games//res"),
-                new File("D://Games//savegames"),
+                new File("D://Games//saveGames"),
                 new File("D://Games//src//main"),
                 new File("D://Games//src//test"),
                 new File("D://Games//res//drawables"),
@@ -24,23 +24,23 @@ public class Main {
                 new File("D://Games//src//main//Utils.java"),
                 new File("D://Games//temp//temp.txt")
         );
-        folderList.stream().forEach(folder -> {
-            if (folder.mkdir()) sb.append("Каталог " + folder + " создан\n");
-            else sb.append("Каталог " + folder + " не создан\n");
+        folderList.forEach(folder -> {
+            if (folder.mkdir()) sb.append("Каталог ").append(folder).append(" создан\n");
+            else sb.append("Каталог ").append(folder).append(" не создан\n");
         });
-        fileList.stream().forEach(file -> {
+        fileList.forEach(file -> {
             try {
-                if (file.createNewFile()) sb.append("Файл " + file + " создан\n");
-                else sb.append("Файл " + file + " не создан\n");
+                if (file.createNewFile()) sb.append("Файл ").append(file).append(" создан\n");
+                else sb.append("Файл ").append(file).append(" не создан\n");
             } catch (IOException ex) {
-                sb.append(ex.getMessage() + '\n');
+                sb.append(ex.getMessage()).append('\n');
             }
         });
         try (FileWriter log = new FileWriter("D://Games//temp//temp.txt", false)) {
             log.write(sb.toString());
             log.flush();
         } catch (IOException ex) {
-            sb.append(ex.getMessage() + '\n');
+            sb.append(ex.getMessage()).append('\n');
         }
         try (BufferedReader br = new BufferedReader(new FileReader("D://Games//temp//temp.txt"))) {
             String s;
